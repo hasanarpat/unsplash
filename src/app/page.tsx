@@ -1,9 +1,9 @@
-import { Button } from '@/components/ui/button';
+import Banner from '@/components/banner/Banner';
 
 export default function Home() {
   return (
     <main className=''>
-      <Button className='mt-8'>Merhaba</Button>
+      <Banner />
       <h1>Merhaba</h1>
       <h1>Merhaba</h1>
       <h1>Merhaba</h1>

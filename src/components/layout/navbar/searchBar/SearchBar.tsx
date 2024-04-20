@@ -51,7 +51,7 @@ const SearchBar = () => {
       </form>
       <div
         className={cn(
-          'absolute hidden w-full border border-border rounded-lg top-11 bg-white p-4 z-10',
+          'absolute hidden w-full border border-border rounded-lg top-11 bg-white p-4 z-[99]',
           showSuggestions && 'block'
         )}
       >
