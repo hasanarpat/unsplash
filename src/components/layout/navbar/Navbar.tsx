@@ -19,7 +19,7 @@ import { cn } from '@/lib/utils';
 const Navbar = () => {
   const pathname = usePathname();
   return (
-    <nav className='h-28 border-b-2 border-border sticky top-0 bg-background'>
+    <nav className='h-28 border-b-2 border-border sticky top-0 bg-background z-50'>
       <div className='h-14 p-2.5 px-5 w-full flex items-center justify-between gap-4'>
         <Logo />
         <SearchBar />
