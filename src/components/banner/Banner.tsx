@@ -8,6 +8,8 @@ import {
   CarouselPrevious,
 } from '../ui/carousel';
 import SearchBar from '../layout/navbar/searchBar/SearchBar';
+import Link from 'next/link';
+import { trendingSearches } from '@/lib/constants';
 
 const Banner = () => {
   return (
@@ -139,12 +141,12 @@ const Banner = () => {
         </Button>
       </div>
       <div className='hidden md:block w-full'>
-        <div className='w-[95%] mx-auto flex gap-8 items-end'>
-          <div className='w-[60%] flex flex-col justify-end gap-4'>
-            <h3 className='text-4xl font-semibold pb-0 mt-4'>Unsplash</h3>
+        <div className='xl:w-[95%] p-4 mx-auto flex gap-8 items-end'>
+          <div className='w-[60%] lg:w-[50%] flex flex-col justify-end gap-4'>
+            <h3 className='text-4xl font-bold pb-0 mt-4'>Unsplash</h3>
             <div className='w-full flex items-end flex-wrap gap-2'>
               {' '}
-              <p className='text-lg font-medium max-w-[65%]'>
+              <p className='text-md font-medium max-w-[55%]'>
                 The internet&apos;s source for visuals. Powered by creators
                 everywhere.
               </p>
@@ -157,7 +159,48 @@ const Banner = () => {
             </div>
             <SearchBar />
           </div>
-          <div className='w-[40%]'></div>
+          <div className='w-[40%] lg:w-[50%] flex gap-4 pt-6'>
+            <div className='w-72 h-72 border border-border rounded-lg flex flex-col justify-between'>
+              <div className='flex flex-wrap gap-2 p-4'>
+                {trendingSearches.map((item, i) => (
+                  <Button
+                    size='sm'
+                    variant='outline'
+                    key={i}
+                    className=' font-light'
+                  >
+                    <Link href={item.href}>{item.title}</Link>
+                  </Button>
+                ))}
+              </div>
+              <span className='underline p-4 flex items-center gap-2 text-sm'>
+                <svg
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                  version='1.1'
+                  aria-hidden='false'
+                  className='fill-muted-foreground'
+                >
+                  <desc lang='en-US'>A trend sign</desc>
+                  <path d='m16 6 2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6Z'></path>
+                </svg>
+                See trending searches
+              </span>
+            </div>
+            <div className='hidden lg:block w-72 h-72 relative rounded-lg border border-border'>
+              <Image
+                alt=''
+                src='https://images.unsplash.com/photo-1713972085027-706e345e7215?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8'
+                fill
+                className='object-cover rounded-lg hue-rotate-15'
+              />
+              <div className='flex flex-col absolute z-10 text-white font-medium bottom-4 left-4'>
+                <span className='text-xs'>Featured</span>
+                <span>Moritz Lange</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

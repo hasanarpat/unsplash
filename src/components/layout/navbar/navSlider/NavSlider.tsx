@@ -122,7 +122,7 @@ const NavSlider = () => {
           {listItems.map((item, i) => (
             <CarouselItem
               key={i}
-              className='text-muted-foreground text-xs max-w-max h-9'
+              className='text-muted-foreground text-sm max-w-max h-9'
             >
               <Link
                 href={item.href}
