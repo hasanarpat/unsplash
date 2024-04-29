@@ -78,16 +78,21 @@
 @layer utilities {
   .gallery-image-container {
     width: 100%;
+    height: auto !important;
 
-    > div {
+    > div:not([id^='layer']) {
       position: unset !important;
     }
 
+    #layer {
+      position: absolute;
+    }
+
     .gallery-image {
-      object-fit: contain;
+      object-fit: cover;
       width: 100% !important;
       position: relative !important;
-      height: unset !important;
+      height: auto !important;
       max-height: 720px;
     }
   }

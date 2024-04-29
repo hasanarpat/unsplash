@@ -3,7 +3,7 @@ import Gallery from '@/components/layout/img/gallery/Gallery';
 
 export default function Home() {
   return (
-    <main className='w-full max-w-screen-2xl mx-auto'>
+    <main className='w-full max-w-screen-xl mx-auto'>
       <Banner />
       <Gallery />
     </main>
